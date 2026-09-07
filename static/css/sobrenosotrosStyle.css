@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.slider-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 50px auto;
+    overflow: hidden; /* Ocultar contenido que se desborda */
+    border-radius: 20px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa el 100% del contenedor */
+    text-align: center;
+}
+
+.slide img {
+    width: 360px; /* Ancho fijo de 360px */
+    height: 360px; /* Alto fijo de 360px */
+    object-fit: cover; /* Asegura que la imagen ocupe todo el espacio del contenedor sin deformarse */
+    margin: 0 auto; /* Centra la imagen en su contenedor */
+    border-radius: 20px;
+}
+
+.slide h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.slide p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+.textINI{
+    text-align: center;
+}
+/* Estilo para los botones de navegación */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-buttons button:hover {
+    background-color: #005bb5;
+}

@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.DS_Store
+Thumbs.db
+Modelo/modeloLBPH.xml
+Modelo/modelito2LBPH.xml
+venv/lib/python3.11/site-packages/jaxlib/libjax_common.so
+Modelo/archive.zip

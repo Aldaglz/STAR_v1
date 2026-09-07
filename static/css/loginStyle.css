@@ -1,0 +1,148 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Para mejorar en dispositivos pequeños */
+}
+
+/* Contenedor del login */
+.login-container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Estilo del título */
+.login-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Estilo de las etiquetas */
+.form-group label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilo de los campos de entrada */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+/* Estilo del botón de login */
+.login-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del enlace de registro */
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.register-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #4CAF50; /* Fondo verde llamativo */
+    color: white; /* Texto en blanco para contraste */
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra superior para destacar */
+    border-top: 3px solid #388E3C; /* Línea decorativa */
+    margin-top: auto; /* Asegura que se quede al fondo */
+}
+
+/* Enlace dentro del footer */
+footer a {
+    color: #FFD700; /* Amarillo para destacar */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para responsive */
+
+/* Móviles */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .login-container h1 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        font-size: 16px;
+    }
+
+    .login-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .login-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .login-container h1 {
+        font-size: 22px;
+    }
+}

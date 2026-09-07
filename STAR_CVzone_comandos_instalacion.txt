@@ -1,0 +1,262 @@
+S.T.A.R. / CVzone - Comandos de instalación y ejecución
+======================================================
+
+Entorno probado:
+- Raspberry Pi 4
+- Raspberry Pi OS Bookworm 64-bit
+- Python 3.11.2
+- MediaPipe 0.10.18
+
+------------------------------------------------------
+1. VERIFICAR VERSION DE PYTHON
+------------------------------------------------------
+
+python3 --version
+
+
+------------------------------------------------------
+2. IR AL ESCRITORIO
+------------------------------------------------------
+
+cd ~/Desktop
+
+
+------------------------------------------------------
+3. EXTRAER EL PROYECTO .RAR
+------------------------------------------------------
+
+7z x CVzone.rar
+
+Si aparece "Unsupported Method", instalar soporte RAR:
+
+sudo apt update
+sudo apt install p7zip-rar
+
+Y volver a intentar:
+
+7z x CVzone.rar
+
+
+------------------------------------------------------
+4. ENTRAR A LA CARPETA DEL PROYECTO
+------------------------------------------------------
+
+cd ~/Desktop/CVzone
+
+
+------------------------------------------------------
+5. CREAR EL ENTORNO VIRTUAL
+------------------------------------------------------
+
+python3 -m venv --system-site-packages venv
+
+
+------------------------------------------------------
+6. ACTIVAR EL ENTORNO VIRTUAL
+------------------------------------------------------
+
+source venv/bin/activate
+
+La terminal debe mostrar algo parecido a:
+
+(venv) _alda-03_@aldair-ras:~/Desktop/CVzone $
+
+
+------------------------------------------------------
+7. COMPROBAR PYTHON DENTRO DEL VENV
+------------------------------------------------------
+
+python --version
+
+Resultado esperado en Raspberry Pi OS Bookworm:
+
+Python 3.11.2
+
+
+------------------------------------------------------
+8. INSTALAR MEDIAPIPE LEGACY COMPATIBLE
+------------------------------------------------------
+
+pip install mediapipe==0.10.18
+
+
+------------------------------------------------------
+9. COMPROBAR MEDIAPIPE Y mp.solutions.pose
+------------------------------------------------------
+
+python -c "import mediapipe as mp; print(mp.__version__); print(mp.solutions.pose)"
+
+Resultado esperado:
+
+0.10.18
+<module 'mediapipe.python.solutions.pose' ...>
+
+
+------------------------------------------------------
+10. INSTALAR FLASK
+------------------------------------------------------
+
+pip install flask
+
+
+------------------------------------------------------
+11. COMPROBAR FLASK
+------------------------------------------------------
+
+python -c "import flask; print(flask.__version__)"
+
+
+------------------------------------------------------
+12. OPENCV / PYQT5
+------------------------------------------------------
+
+En Raspberry Pi OS se pueden instalar paquetes del sistema con apt:
+
+sudo apt update
+sudo apt install python3-opencv python3-pyqt5
+
+Como el entorno fue creado con:
+
+python3 -m venv --system-site-packages venv
+
+el entorno virtual puede acceder a esos paquetes del sistema.
+
+Si el proyecto necesita OpenCV Contrib (por ejemplo cv2.face / LBPH):
+
+pip install opencv-contrib-python
+
+
+------------------------------------------------------
+13. EJECUTAR LA APP PRINCIPAL
+------------------------------------------------------
+
+cd ~/Desktop/CVzone
+source venv/bin/activate
+python Main.py
+
+
+------------------------------------------------------
+14. EJECUTAR EL SERVIDOR FLASK
+------------------------------------------------------
+ 
+Primero activar el entorno: 
+
+cd ~/Desktop/CVzone
+source venv/bin/activate
+
+Después ejecutar el archivo del servidor Flask, por ejemplo:
+
+python app.py
+
+Cambiar "app.py" por el nombre real del archivo de servidor Flask.
+
+
+------------------------------------------------------
+15. COMANDOS RAPIDOS PARA USO DIARIO
+------------------------------------------------------
+
+cd ~/Desktop/CVzone
+source venv/bin/activate
+python Main.py
+
+Para Flask:
+
+cd ~/Desktop/CVzone
+source venv/bin/activate
+python app.py
+
+
+------------------------------------------------------
+16. CAMBIOS IMPORTANTES EN LAS RUTAS DEL CODIGO
+------------------------------------------------------
+
+Evitar rutas absolutas de Windows como:
+
+C:/Users/USUARIO LENOVO/Desktop/CVzone/Modelo/Data
+
+En Raspberry Pi funciono usando:
+
+/home/_alda-03_/Desktop/CVzone/Modelo/Data
+
+Sin embargo, para subir el proyecto a GitHub y hacerlo portable,
+lo recomendable es NO usar rutas absolutas.
+
+Ejemplo recomendado en Python:
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+dataPath = BASE_DIR / "Modelo" / "Data"
+modeloPath = BASE_DIR / "modelito2LBPH.xml"
+
+De esta manera el proyecto funciona sin importar el nombre del usuario
+o la carpeta donde se clone.
+
+
+======================================================
+PREPARACION PARA GITHUB
+======================================================
+
+Para que otra persona pueda descargar y ejecutar el proyecto:
+
+1. NO subir la carpeta venv a GitHub.
+
+2. Crear un archivo .gitignore que incluya:
+
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+3. Crear requirements.txt desde el entorno funcional:
+
+pip freeze > requirements.txt
+
+IMPORTANTE:
+En Raspberry Pi algunos paquetes como PyQt5/OpenCV pueden venir de apt
+y no necesariamente aparecer correctamente en requirements.txt.
+
+4. En otro equipo, crear un entorno nuevo:
+
+python3 -m venv venv
+
+Activar en Linux/macOS:
+
+source venv/bin/activate
+
+Activar en Windows PowerShell:
+
+venv\Scripts\Activate.ps1
+
+5. Instalar dependencias:
+
+pip install -r requirements.txt
+
+
+======================================================
+NOTA DE COMPATIBILIDAD
+======================================================
+
+El entorno que funciono en Raspberry Pi fue:
+
+Python 3.11.2
+MediaPipe 0.10.18
+Raspberry Pi OS Bookworm 64-bit
+
+El codigo usa la API antigua:
+
+mp.solutions.pose
+
+Por ello es importante mantener una version de MediaPipe compatible
+con esa API.
+
+Para hacer el proyecto verdaderamente portable entre:
+- Raspberry Pi OS
+- Linux x86_64
+- Windows
+- macOS
+
+puede ser necesario separar dependencias por plataforma o documentar
+versiones compatibles.
+
+======================================================

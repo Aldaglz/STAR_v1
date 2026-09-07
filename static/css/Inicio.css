@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Títulos de secciones */
+.section-title {
+    font-size: 2rem;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+/* Estilo para las imágenes de las secciones */
+.section-image {
+    display: block;
+    max-width: 100%; /* Para que se ajuste al ancho del contenedor */
+    height: auto;
+    margin: 20px auto; /* Centrado automático */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+}
+
+/* Estilo para el texto debajo de las imágenes */
+.section-text {
+    text-align: center; /* Centra el texto */
+    font-size: 18px;
+    color: #555; /* Gris suave */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Párrafos */
+.container p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Espaciado entre secciones */
+.container section {
+    margin-bottom: 2rem;
+}
+
+/* Mejoras responsivas */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+}

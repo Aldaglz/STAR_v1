@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR - Social Therapy Assistance Robot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/robotStyle.css') }}">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo del proyecto">
+            <h1>Social Therapy Assistance Robot</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('inicio') }}" class="nav-link">Inicio</a>
+            <a href="{{ url_for('sobre_nosotros') }}" class="nav-link">Sobre Nosotros</a>
+            <a href="{{ url_for('robot') }}" class="nav-link">Robot</a>
+
+        </nav>       
+    </header>
+    <main>
+        <section class="controls">
+            <div class="select-container">
+                <label for="options">Selecciona un ejercicio:</label>
+                <select id="options" name="options">
+                    <option value="opcion1">Levantar ambos brazos</option>
+                    <option value="opcion2">Levantar brazo izquierdo</option>
+                    <option value="opcion3">Levantar brazo derecho</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <form action="/start_video" method="post">   
+                    <button class="btn btn-on" type="submit">Iniciar Captura</button>        
+                </form>
+                <form action="/stop_video" method="post">
+                    <button class="btn btn-off" type="submit">Detener Captura</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 STAR. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR - Social Therapy Assistance Robot</title>
+
+    <!-- Verifica que la ruta sea correcta y que el archivo CSS exista -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyle.css') }}">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+            <h1>Iniciar Sesión</h1>
+          
+            <!-- Formulario para login -->
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <button type="submit" class="login-button" id="loginButton">Ingresar</button>
+            </form>
+
+            <p class="register-link">¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+        </div>
+    </main>
+</body>
+</html>

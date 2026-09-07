@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR - Social Therapy Assistance Robot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/robotStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Inicio.css')}}">
+    
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo del proyecto">
+
+            <h1>Social Therapy Assistance Robot</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('inicio') }}" class="nav-link">Inicio</a>
+            <a href="{{ url_for('sobre_nosotros') }}" class="nav-link">Sobre Nosotros</a>
+            <a href="{{ url_for('robot') }}" class="nav-link">Robot</a>
+
+        </nav>       
+    </header>
+
+    <div class="container">
+        <!-- Razón de STAR -->
+        <section id="razon">
+            <h2 class="section-title">Razón de STAR</h2>
+            <p>El Trastorno del Espectro Autista (TEA) afecta a muchos niños y jóvenes en México, quienes enfrentan dificultades en la comunicación y la interacción social. La escasez de recursos especializados y el alto costo de las terapias limitan el acceso a un tratamiento adecuado. Las terapias tradicionales suelen ser monótonas y no siempre se ajustan a las necesidades individuales. Ante esto, se propone un robot terapéutico que no busca reemplazar a los terapeutas, sino apoyarlos con terapias personalizadas y dinámicas, facilitando una atención más accesible y efectiva.</p>
+            <img src="{{ url_for('static', filename='/Images/autismo.jpg')}}" alt="Imagen Razón de STAR" class="section-image">
+    
+        </section>
+
+        <!-- Objetivo de STAR -->
+        <section id="objetivo">
+            <h2 class="section-title">Objetivo de STAR</h2>
+            <p>Desarrollar un Robot de Asistencia para niños y jóvenes con autismo que, mediante el uso de tecnologías e inteligencia artificial brinde terapias personalizadas con el fin de mejorar sus habilidades de comunicación, interacción social y autonomía. Este robot busca ofrecer una solución accesible y efectiva para la falta de recursos especializados en el tratamiento del Autismo, contribuyendo así al bienestar emocional y a la inclusión social de las personas con este trastorno.</p>
+            <img src="{{ url_for('static', filename='/Images/nino.jpg')}}" alt="Imagen Razón de STAR" class="section-image">
+        </section>
+        
+        <!-- Caracteristicas claves de STAR -->
+        <section id="Caracteristicas claves">
+            <h2 class="section-title">Caracteristicas claves de STAR</h2>
+            <h3>Personalización</h3>
+            <p>S.T.A.R prevé contar con un sistema de inteligencia artificial capaz de detectar y replicar emociones y movimientos, utilizando una Raspberry Pi Wide Camera 3. Esto permitiría ajustar las sesiones terapéuticas en función de las reacciones individuales de cada usuario, brindando una terapia más eficaz y adaptada a sus necesidades.</p>
+           
+            <h3>Comunicación visual mejorada</h3>
+            <p>El robot incorpora una la pantalla LCD capacitiva que muestra expresiones faciales, facilitando la conexión emocional y la comprensión por parte de personas con TEA. Este aspecto es crucial para crear un entorno terapéutico más acogedor y efectivo, algo que pocas soluciones comerciales logran.</p>
+            
+            <h3>Movilidad y realismo en la interacción</h3>
+            <p>S.T.A.R está equipado con 20 servomotores, distribuidos para permitir movimientos precisos, simulando interacciones humanas de manera más realista. Esto enriquece la experiencia terapéutica en comparación con robots que presentan movimientos limitados y menos orgánicos.</p>
+           
+            <h3>Enfoque en la accesibilidad</h3>
+            <p>S.T.A.R se ha desarrollado pensando en ser una solución modular y asequible, lo que facilita la implementación en centros especializados. Esta accesibilidad es clave para asegurar que S.T.A.R sea una herramienta viable y escalable en el futuro.</p>
+            
+            
+            <img src="{{ url_for('static', filename='Images/star.png')}}" alt="Imagen Razón de STAR" class="section-image">
+        </section>
+
+         <!-- Alianzas de STAR -->
+         <section id="alianza">
+            <h2 class="section-title">Alianzas de STAR</h2>
+            <p>Actualmente, estamos trabajando con organizaciones como Venciendo el Autismo I.A.P en la ciudad de Nogales, Sonora donde se ha recibido retroalimentación constante para la incorporación de mejoras al proyecto.</p>
+            <p>Tambien, hemos presentado nuestra propuesta con CRIT Sonora para un futuro implemetar este robot en sus terapias de motricidad.</p>
+            <img src="{{ url_for('static', filename='Images/teleton.jpg')}}" alt="Imagen Razón de STAR" class="section-image">
+            <img src="{{ url_for('static', filename='Images/iap.png')}}" alt="Imagen Razón de STAR" class="section-image">
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 STAR. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
